@@ -21,5 +21,27 @@ public class Conto {
 		this.nomeProprietario = nomeProprietario;
 	}
 	
+	public void versamentoUtente(double sommaVersataDaUtente) {
+		this.saldoConto = saldoConto + sommaVersataDaUtente;
+	}
+	
+	public double prelievoUtente(double prelievoEffettuatoDaUtente) {
+		
+		if (saldoConto > prelievoEffettuatoDaUtente) {
+			saldoConto = this.saldoConto - prelievoEffettuatoDaUtente;
+			return saldoConto;
+		} else {
+			return -1;
+
+		}
+	}
+	
+	public String infoConto() {
+		return "Codice del conto: " +codiceConto + "Nome: " +nomeProprietario + "il saldo è: " +saldoConto;
+	}
+	
+	public double formattaSaldo(){
+		return saldoConto = 0;
+	}
 	
 }
