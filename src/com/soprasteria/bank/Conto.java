@@ -41,7 +41,7 @@ public class Conto {
 	}
 	
 	public double formattaSaldo(){
-		return saldoConto = 0;
+		return Math.round(saldoConto *100.0) / 100.0;
 	}
 	
 }
