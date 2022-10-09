@@ -48,28 +48,44 @@ public class Main {
 		
 		Conto contoIntestato = new Conto(NomeUtente);
 		System.out.println(contoIntestato.getCodiceConto());
+		System.out.println(NomeUtente);
 		
-		String sceltaUtente;
+		
+		
+		int sceltaUtente;
 		
 		do {
-			System.out.println("preleva versa o esci");
-			sceltaUtente = in.nextLine();
+			System.out.println("1 prelevare 2 versare 3 esci");
+			sceltaUtente = in.nextInt();
+			
+			switch (sceltaUtente) {
+			case 1:
+				System.out.println("quanto vuoi prelevare?");
+				double prelievo = in.nextDouble();
+				System.out.println(contoIntestato.prelievoUtente(prelievo));
+				
+				
+				break;
+			
+			case 2:
+				System.out.println("quanto vuoi versare?");
+				double versamento = in.nextDouble();
+				System.out.println(contoIntestato.versamentoUtente(versamento));
+			
+				
+				break;
+				
+			default:
+				System.out.println("scelta non valida");
+				break;
+			}
 			
 			
-		switch(sceltaUtente) {
-		case preleva:
-			System.out.println("quanto vuoi prelevare?");
-			break;
+			
+		} while (sceltaUtente != 3);
 		
-		
-		}
-			
-			
-			
-			
-		} while(sceltaUtente == "esci" );
-		
+	
 		}
 	}
 
-}
+
