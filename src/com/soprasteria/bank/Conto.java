@@ -14,20 +14,25 @@ public class Conto {
 		
 	}
 	
-	public int getCodiceConto = codiceConto;
-	public double getSaldoConto = saldoConto;
+	public int getCodiceConto(){
+		return codiceConto;
+	}
+	public double getSaldoConto(){
+		return saldoConto;
+	} 
 
 	public void setNomeProprietario(String nomeProprietario) {
 		this.nomeProprietario = nomeProprietario;
 	}
 	
-	public void versamentoUtente(double sommaVersataDaUtente) {
+	public double versamentoUtente(double sommaVersataDaUtente) {
 		this.saldoConto = saldoConto + sommaVersataDaUtente;
+		return saldoConto;
 	}
 	
 	public double prelievoUtente(double prelievoEffettuatoDaUtente) {
 		
-		if (saldoConto > prelievoEffettuatoDaUtente) {
+		if (saldoConto >= prelievoEffettuatoDaUtente) {
 			saldoConto = this.saldoConto - prelievoEffettuatoDaUtente;
 			return saldoConto;
 		} else {
